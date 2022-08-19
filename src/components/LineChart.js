@@ -50,7 +50,37 @@ ChartJS.register(
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
-export const data = {
+export const data1 = {
+  labels,
+  datasets: [
+    {
+      label: "Nickel",
+      data: [22326, 24178, 31860.65, 33298.42, 27950, 25837.5],
+      borderColor: "#FFBF00",
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+    },
+    {
+      label: "Tin",
+      data: [41807, 44117.75, 44248.91, 43121.58, 35944.76, 31776.75],
+      borderColor: "#3DDC84	",
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+    },
+    {
+      label: "Copper",
+      data: [9775.93, 9941.35, 10237.59, 10183.13, 9362.81, 9033.13],
+      borderColor: "#9C2542",
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+    },
+    {
+      label: "Cobalt",
+      data: [70452.25, 71537.75, 80649.13, 81789.47, 77577.38, 72077.75],
+      borderColor: "#FF91AF",
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+    },
+  ],
+};
+
+export const data2 = {
   labels,
   datasets: [
     {
@@ -65,12 +95,7 @@ export const data = {
       borderColor: "#B0BF1A	",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
-    {
-      label: "Copper",
-      data: [9775.93, 9941.35, 10237.59, 10183.13, 9362.81, 9033.13],
-      borderColor: "#9C2542",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
+
     {
       label: "Lead",
       data: [2342.7, 2299.9, 2359.48, 2396.74, 2145.17, 2067.38],
@@ -78,27 +103,9 @@ export const data = {
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
     {
-      label: "Nickel",
-      data: [22326, 24178, 31860.65, 33298.42, 27950, 25837.5],
-      borderColor: "#FFBF00",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
-    {
-      label: "Tin",
-      data: [41807, 44117.75, 44248.91, 43121.58, 35944.76, 31776.75],
-      borderColor: "#3DDC84	",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
-    {
       label: "Zinc",
       data: [3609.95, 3644.23, 3974.3, 4371.03, 3759.45, 3643.95],
       borderColor: "#B2BEB5	",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
-    {
-      label: "Cobalt",
-      data: [70452.25, 71537.75, 80649.13, 81789.47, 77577.38, 72077.75],
-      borderColor: "#FF91AF",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
     {
@@ -130,8 +137,13 @@ export const data = {
 
 export default function LineChartCommodity() {
   return (
-    <div style={{ width: "95%", marginLeft: "50px" }}>
-      <Line data={data} />
+    <div style={{ display: "flex", paddingLeft:"50px", paddingRight:"50px" }}>
+      <div style={{ width: "50%" }}>
+        <Line data={data1} />
+      </div>
+      <div style={{ width: "50%" }}>
+        <Line data={data2} />
+      </div>
     </div>
   );
 }
